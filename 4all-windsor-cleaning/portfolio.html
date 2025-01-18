@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portfolio | 4All Windsor Cleaning Services</title>
+
+  <!-- SEO and JSON-LD Schema (unchanged) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "4All Windsor Cleaning Services",
+    "description": "4All Windsor Cleaning Services offers reliable, high-quality house and commercial cleaning in Windsor, LaSalle, and Tecumseh. From deep cleans to move-in/move-out services, we ensure your space is spotless and welcoming—every time.",
+    "image": "https://4allwindsorcleaning.ca/images/logo.png",
+    "@id": "https://4allwindsorcleaning.ca",
+    "url": "https://4allwindsorcleaning.ca",
+    "telephone": "+12267877976",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1609 Moy Ave",
+      "addressLocality": "Windsor",
+      "addressRegion": "ON",
+      "postalCode": "N8X 3J9",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.30482786158251,
+      "longitude": -83.00772270371917
+    },
+    "openingHours": [
+      "Mo-Fr 07:00-22:00",
+      "Sa 08:00-20:00",
+      "Su 09:00-18:00"
+    ],
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61570919773833",
+      "https://x.com/4AllWindsor"
+    ]
+  }
+  </script>
+
+  <!-- Site-Wide CSS -->
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/top-bar.css">
+  <link rel="stylesheet" href="styles/navigation-bar.css">
+  <link rel="stylesheet" href="styles/hamburger.css">
+  <link rel="stylesheet" href="styles/footer.css">
+
+  <!-- Page-Specific CSS -->
+  <style>
+    /****************************************
+      HERO GALLERY
+    ****************************************/
+    .hero-gallery {
+      position: relative;
+      width: 100%;
+      height: 60vh;
+      background: url('images/hero-gallery.jpg') center/cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero-gallery::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      z-index: 1;
+    }
+    .hero-gallery .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 0 1rem;
+    }
+    .hero-gallery .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+    }
+    .hero-gallery .hero-content p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+    }
+
+    /****************************************
+      GALLERY CONTAINER
+    ****************************************/
+    .gallery-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 2rem auto;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    .gallery-container h2 {
+      color: var(--primary-color, #2a93d2);
+      margin-bottom: 1rem;
+      font-size: 2rem;
+    }
+    .gallery-container p {
+      color: #555;
+      margin-bottom: 2rem;
+    }
+
+    /****************************************
+      ROW GALLERY
+    ****************************************/
+    .row-gallery {
+      display: flex;
+      gap: 1rem;
+      overflow: hidden; /* Hide overflow on small screens */
+      position: relative;
+      scroll-behavior: smooth; /* Enable smooth scrolling for slider */
+      margin-bottom: 2rem; 
+    }
+
+    .row-gallery > div {
+      flex: 20% 0 auto;       /* Don’t shrink or grow—stays as is */
+      width: 200px;
+      height: 300px;
+      border-radius: 1rem;
+      background-position: center;
+      background-size: cover;
+      cursor: pointer;
+      transition: transform 0.4s ease, filter 0.4s ease;
+    }
+
+    /* Slider Buttons */
+    .slider-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(0, 0, 0, 0.5);
+      color: white;
+      border: none;
+      cursor: pointer;
+      padding: 10px;
+      border-radius: 50%;
+      z-index: 2;
+      font-size: 1.2rem;
+    }
+    .slider-btn.left {
+      left: 10px;
+    }
+    .slider-btn.right {
+      right: 10px;
+    }
+
+
+    @media (max-width: 900px){
+      .row-gallery > div {
+      flex: 0 0 auto;       /* Don’t shrink or grow—stays as is */
+      width: 200px;
+      height: 150px;
+      border-radius: 1rem;
+      background-position: center;
+    }
+    /* Large screens >= 900px: 
+       Hide slider buttons, enable expand-on-hover effect 
+       (like your original code). 
+    */
+    @media (min-width: 900px) {
+      .row-gallery {
+        overflow: visible;
+      }
+      .row-gallery > div {
+        width: auto;
+        flex: 1;
+        transition: all 0.8s cubic-bezier(.25, .4, .45, 1.4);
+      }
+
+      .slider-btn {
+        display: none;
+      }
+
+      .row-gallery:hover > div {
+        filter: blur(2px) brightness(80%);
+      }
+      .row-gallery > div:hover {
+        flex: 3;
+        filter: none;
+        transform: scale(1);
+        z-index: 2;
+      }
+    }
+
+    /* IMPROVED SLIDING for under 900px
+       - Make rows horizontally scrollable, with left/right buttons 
+       - Adjust margins for a nicer look
+    */
+    @media (max-width: 900px) {
+      .row-gallery {
+        margin-bottom: 3rem;  /* Slightly bigger bottom margin for aesthetics */
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scroll-behavior: smooth;
+      }
+      .row-gallery > div {
+        margin-left: 0.5rem;
+        margin-right: 0.5rem; /* small horizontal spacing for each card */
+      }
+    }
+
+    /*  For narrower phones, optionally reduce the hero height & tile sizes */
+    @media (max-width: 500px) {
+      .hero-gallery {
+        height: 45vh;
+      }
+      .row-gallery > div {
+        width: 180px;
+        height: 130px;
+      }
+    }
+
+    /* For short screens <= 550px height 
+       - optional if you want to reduce row height further 
+    */
+    @media (max-height: 550px) {
+      .hero-gallery {
+        height: 40vh;
+      }
+      .row-gallery > div {
+        height: 110px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- TOP BAR & HEADER (unchanged) -->
+  <header>
+    <div class="top-bar">
+      <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="images/logo.png"
+              alt="4ALL Windsor Cleaning Services Logo"
+            />
+          </a>
+        </div>
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+            <span class="text">1609 Moy Ave, Windsor, ON</span>
+          </div>
+          <div class="contact-item">
+            <span class="icon"><i class="fas fa-phone-alt"></i></span>
+            <span class="text">
+              <a href="tel:2267877976">226-787-7976</a>
+            </span>
+          </div>
+          <div class="contact-item">
+            <span class="icon"><i class="fas fa-envelope"></i></span>
+            <span class="text">
+              <a href="mailto:info@4allwindsorcleaning.com">info@4allwindsorcleaning.com</a>
+            </span>
+          </div>
+        </div>
+        <!-- CTA Button -->
+        <div class="top-bar-cta-button">
+          <a id="callbackBtn" href="#callback" class="btn-cta fade-text">
+            <span class="text-full">Get a Call Back</span>
+            <span class="text-short">Call Back</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION BAR (unchanged) -->
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="promotions.html">Promotions</a></li>
+        <li><a href="portfolio.html">Our Work</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+  
+  <!-- HERO GALLERY -->
+  <section class="hero-gallery">
+    <div class="hero-content">
+      <h1>Our Portfolio</h1>
+      <p>Explore Our Latest Cleaning Transformations</p>
+    </div>
+  </section>
+
+  <!-- MAIN GALLERY -->
+  <main class="gallery-container">
+    <h2>Swipe or Click to See More</h2>
+    <p>
+      On larger screens, hover to expand panels. 
+      On smaller screens (under 900px), 
+      smoothly slide through images with the left/right buttons or by swiping.
+    </p>
+
+    <!-- ROW 1 -->
+    <div class="row-gallery" id="row-gallery-1">
+      <!-- Slider buttons only show under 900px, so we can add them dynamically if you like. -->
+      <button class="slider-btn left" id="left-btn-1" style="display:none;">&#10094;</button>
+      <div style="background-image: url('images/row-gallery1.jpeg');"></div>
+      <div style="background-image: url('images/row-gallery2.jpeg');"></div>
+      <div style="background-image: url('images/row-gallery3.jpeg');"></div>
+      <div style="background-image: url('images/row-gallery4.jpeg');"></div>
+      <div style="background-image: url('images/row-gallery5.jpeg');"></div>
+      <div style="background-image: url('images/row-gallery6.jpeg');"></div>
+      <button class="slider-btn right" id="right-btn-1" style="display:none;">&#10095;</button>
+    </div>
+
+    <!-- ROW 2 -->
+    <div class="row-gallery" id="row-gallery-2">
+      <button class="slider-btn left" id="left-btn-2" style="display:none;">&#10094;</button>
+      <div style="background-image: url('images/row2-gallery1.jpeg');"></div>
+      <div style="background-image: url('images/row2-gallery2.jpeg');"></div>
+      <div style="background-image: url('images/row2-gallery3.jpeg');"></div>
+      <div style="background-image: url('images/row2-gallery4.jpeg');"></div>
+      <div style="background-image: url('images/row2-gallery5.jpeg');"></div>
+      <div style="background-image: url('images/row2-gallery6.jpeg');"></div>
+      <div style="background-image: url('images/row2-gallery7.jpeg');"></div>
+      <button class="slider-btn right" id="right-btn-2" style="display:none;">&#10095;</button>
+    </div>
+  </main>
+
+  <!-- FOOTER (unchanged) -->
+  <footer class="colorful-wave-footer">
+    <div class="footer-content">
+      <div class="footer-columns">
+        <!-- Column 1: Logo & Tagline -->
+        <div class="footer-col">
+          <img
+            src="images/footer-logo.png"
+            alt="Company Logo"
+            class="footer-logo"
+          />
+          <p class="footer-tagline">Cleaning you can count on—every single time</p>
+        </div>
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <li><a href="promotions.html">Promotions</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Column 3: Newsletter & Social -->
+        <div class="footer-col">
+          <h3>Stay in the Loop</h3>
+          <p>
+            Sign up for special offers and cleaning tips delivered right to you.
+          </p>
+          <form action="#" method="post" class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required/>
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/profile.php?id=61570919773833"
+              target="_blank"
+              class="facebook-icon"
+              aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i></a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="social-icon"
+            ><i class="fab fa-instagram"></i></a>
+            <a
+              href="https://x.com/4AllWindsor"
+              target="_blank"
+              class="twitter-icon"
+              aria-label="Twitter"
+            ><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="current-year"></span> 4All Windsor Cleaning Services.
+          All rights reserved.
+        </p>
+        <p>
+          <a href="privacy.html">Privacy Policy</a> | 
+          <a href="terms.html">Terms of Service</a>
+        </p>
+      </div>
+    </div>
+    <div class="tilt-overlay"></div>
+  </footer>
+
+  <!-- Update Year Script -->
+  <script>
+    document.getElementById('current-year').textContent = new Date().getFullYear();
+  </script>
+
+  <!-- SLIDER SCRIPT -->
+  <script>
+    // Only show slider buttons if screen < 900px
+    if (window.innerWidth < 900) {
+      const rowGalleries = [
+        { rowId: 'row-gallery-1', leftId: 'left-btn-1', rightId: 'right-btn-1' },
+        { rowId: 'row-gallery-2', leftId: 'left-btn-2', rightId: 'right-btn-2' }
+      ];
+
+      rowGalleries.forEach(({ rowId, leftId, rightId }) => {
+        const rowGallery = document.getElementById(rowId);
+        const leftBtn = document.getElementById(leftId);
+        const rightBtn = document.getElementById(rightId);
+
+        // Show the slider buttons
+        leftBtn.style.display = 'block';
+        rightBtn.style.display = 'block';
+
+        // We'll use container width to define how far to scroll each time
+        const containerWidth = rowGallery.clientWidth; 
+        let scrollPosition = 0;
+
+        leftBtn.addEventListener('click', () => {
+          scrollPosition -= (containerWidth / 1.2); 
+          if (scrollPosition < 0) scrollPosition = 0;
+          rowGallery.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+          });
+        });
+
+        rightBtn.addEventListener('click', () => {
+          scrollPosition += (containerWidth / 1.2);
+          // You can max out at scrollWidth - clientWidth if you want
+          if (scrollPosition > (rowGallery.scrollWidth - containerWidth)) {
+            scrollPosition = rowGallery.scrollWidth - containerWidth;
+          }
+          rowGallery.scrollTo({
+            left: scrollPosition,
+            behavior: 'smooth'
+          });
+        });
+      });
+    }
+  </script>
+
+  <!-- Additional scripts if needed -->
+  <script src="javascript/top-bar.js"></script>
+  <script src="javascript/hamburger.js"></script>
+  <script src="javascript/navigation-bar.js"></script>
+  <script src="javascript/general.js"></script>
+</body>
+</html>

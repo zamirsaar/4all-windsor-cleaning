@@ -1,0 +1,50 @@
+/* hamburger.css */
+.hamburger {
+    display: none; /* Hidden by default */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+    z-index: 1200;
+    position: relative;
+    margin-right: auto;
+  }
+  .hamburger span {
+    width: 25px;
+    height: 3px;
+    background-color: #fff;
+    border-radius: 2px;
+    transition: all 0.3s ease;
+  }
+  /* Active Hamburger State */
+  .hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translateY(8px);
+  }
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+  }
+  .hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translateY(-8px);
+  }
+  /* Responsive for Mobile */
+  @media screen and (max-width: 768px) {
+    .hamburger {
+      display: flex;
+    }
+    .nav-menu {
+      display: none;
+      flex-direction: column;
+      gap: 10px;
+      position: absolute;
+      top: 40px;
+      left: 0;
+      background-color: rgba(42, 147, 210, 0.9);
+      width: 100%;
+      padding: 20px;
+      box-shadow: 0 2px 4px var(--shadow-color);
+      z-index: 1100;
+    }
+    .nav-menu.active {
+      display: flex;
+    }
+  }
+  

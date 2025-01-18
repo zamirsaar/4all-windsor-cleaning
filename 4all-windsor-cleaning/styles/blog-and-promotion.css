@@ -1,0 +1,196 @@
+/* blog-and-promotion.css */
+
+/* =============== PROMOTIONS SECTION =============== */
+.promotions-section {
+    position: relative;
+    background-color: #ffffff;
+    padding: 4rem 1rem 3rem;
+    box-shadow: inset 0 -1px 3px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    text-align: center;
+  }
+  .promo-bg-accent-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background-color: #e8f4fb;
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+    z-index: 0;
+  }
+  .promotions-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeUpSnippet 1s ease forwards 0.2s;
+  }
+  @keyframes fadeUpSnippet {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .promotions-wrapper h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  .promo-intro {
+    font-size: 1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+  }
+  .promo-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .promo-card {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+  }
+  .promo-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  .promo-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+  }
+  .promo-btn {
+    display: inline-block;
+    background-color: #2a93d2;
+    color: #fff;
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+  }
+  .promo-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  .promo-more-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: #2a93d2;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .promo-more-link:hover {
+    text-decoration: underline;
+  }
+  
+  /* =============== BLOG SECTION =============== */
+  .blog-section {
+    position: relative;
+    background-color: #ffffff;
+    padding: 4rem 1rem 3rem;
+    box-shadow: inset 0 -1px 3px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    text-align: center;
+  }
+  .blog-bg-accent-shape {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background-color: #e8f4fb;
+    clip-path: polygon(0 0, 100% 20%, 100% 100%, 0 100%);
+    z-index: 0;
+  }
+  .blog-wrapper {
+    position: relative;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .blog-wrapper h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  .blog-intro {
+    font-size: 1rem;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 2rem auto;
+    line-height: 1.6;
+  }
+  .blog-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  .blog-card {
+    background-color: #f9f9f9;
+    border-radius: 6px;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    text-align: left;
+  }
+  .blog-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  .blog-card h3 {
+    font-size: 1.1rem;
+    margin: 1rem;
+    color: #333;
+  }
+  .blog-card p {
+    font-size: 0.95rem;
+    color: #666;
+    margin: 0 1rem 1rem;
+    line-height: 1.4;
+  }
+  .blog-link {
+    display: inline-block;
+    margin: 0 1rem 1rem;
+    font-size: 0.85rem;
+    color: #2a93d2;
+    font-weight: bold;
+    text-decoration: none;
+  }
+  .blog-link:hover {
+    text-decoration: underline;
+  }
+  .blog-more-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 4px;
+    border: none;
+    transition: background-color 0.3s ease;
+  }
+  .blog-more-button:hover {
+    background-color: var(--secondary-color);
+    cursor: pointer;
+  }
+  
+  /* Responsive */
+  @media (max-width: 992px) {
+    .promo-grid,
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+  

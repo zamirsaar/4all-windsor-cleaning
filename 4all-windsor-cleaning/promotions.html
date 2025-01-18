@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Pricing | 4All Windsor Cleaning Services</title>
+  
+  <!-- SEO Enhancements -->
+  <meta 
+    name="description"
+    content="Transparent cleaning prices in Windsor with flexible packages, loyalty discounts, and referral promotions. Calculate your cost and choose a tier that suits your needs."
+  />
+  <meta 
+    name="keywords"
+    content="Windsor cleaning service, cleaning rates, home cleaning, commercial cleaning, cleaning promotions, cleaning packages"
+  />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://4allwindsorcleaning.ca/pricing.html" />
+
+  <!-- Google Fonts (Optional) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link 
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" 
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome for Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+
+  <!-- Site-Wide CSS (Copied from your existing setup) -->
+  <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/top-bar.css">
+  <link rel="stylesheet" href="styles/navigation-bar.css">
+  <link rel="stylesheet" href="styles/hamburger.css">
+  <link rel="stylesheet" href="styles/footer.css">
+
+  <!-- Page-Specific CSS for Pricing -->
+  <style>
+    /* HERO SECTION */
+    .hero-pricing {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      background: url('images/hero-pricing.jpg') center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: #fff;
+      overflow: hidden;
+    }
+    .hero-pricing::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+      clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 90%, 0 100%);
+      animation: waveMove 8s ease-in-out infinite alternate;
+    }
+    @keyframes waveMove {
+      0% {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 90%, 0 100%);
+      }
+      50% {
+        clip-path: polygon(0 0, 100% 0, 100% 80%, 50% 95%, 0 100%);
+      }
+      100% {
+        clip-path: polygon(0 0, 100% 0, 100% 85%, 50% 90%, 0 100%);
+      }
+    }
+    .hero-pricing .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding-top: 3rem;
+    }
+    .hero-pricing .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      color: white;
+    }
+    .hero-pricing .hero-content p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    }
+    /* CTA button in hero if you want to jump to #promotions */
+    .hero-pricing .hero-content .promotions-btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      background-color: var(--secondary-color, #7cc244);
+      color: #fff;
+      font-weight: 600;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .hero-pricing .hero-content .promotions-btn:hover {
+      background-color: var(--primary-color, #2a93d2);
+    }
+
+    /* PRICING CONTAINER */
+    .pricing-container {
+      width: 90%;
+      max-width: 1200px;
+      margin: 3rem auto;
+      font-family: 'Open Sans', sans-serif;
+    }
+    .pricing-container h1 {
+      text-align: center;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      color: var(--primary-color, #2a93d2);
+    }
+    .pricing-container p {
+      color: #555;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+
+    /* WRAPPER for 3 columns on desktop: Hourly + Calculator + Promotions */
+    .pricing-flex {
+      display: flex;
+      flex-direction: column;
+      gap: 2rem;
+    }
+    @media (min-width: 992px) {
+      .pricing-flex {
+        flex-direction: row;
+      }
+    }
+
+    /* Hourly Rate + Estimated Hours Section */
+    .hourly-section {
+      flex: 1;
+      background-color: var(--accent-color, #f9f9f9);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .hourly-section h2 {
+      font-size: 1.8rem;
+      color: var(--primary-color, #2a93d2);
+      margin-bottom: 1rem;
+    }
+    .hourly-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 1rem 0;
+    }
+    .hourly-table th, .hourly-table td {
+      text-align: left;
+      padding: 0.75rem;
+      border-bottom: 1px solid #eee;
+    }
+    .hourly-table th {
+      background-color: #e3f2fd;
+      color: #333;
+    }
+    .disclaimer {
+      font-size: 0.9rem;
+      color: #777;
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    /* Calculator Section */
+    .calculator-section {
+      flex: 1;
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .calculator-section h2 {
+      font-size: 1.8rem;
+      color: var(--primary-color, #2a93d2);
+      margin-bottom: 1rem;
+    }
+    .calc-form label {
+      display: block;
+      margin-bottom: 0.3rem;
+      font-weight: 600;
+    }
+    .calc-form input[type="number"],
+    .calc-form select {
+      width: 100%;
+      max-width: 300px;
+      padding: 0.5rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    .add-ons {
+      margin-bottom: 1rem;
+    }
+    .add-ons label {
+      display: inline-block;
+      margin-right: 1rem;
+      font-weight: normal;
+    }
+    .calc-form .button-group {
+      margin-top: 1rem;
+    }
+    .calc-form button {
+      padding: 0.6rem 1.2rem;
+      background-color: var(--secondary-color, #7cc244);
+      color: #fff;
+      font-weight: 600;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-right: 1rem;
+      margin-top: 0.5rem;
+    }
+    .calc-form button:hover {
+      background-color: var(--primary-color, #2a93d2);
+    }
+    .estimate-result {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #333;
+    }
+
+    /* Promotions Column (3rd column) */
+    .promotions-section {
+      flex: 1;
+      background-color: #fff;
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    }
+    .promotions-section h2 {
+      font-size: 1.8rem;
+      color: var(--primary-color, #2a93d2);
+      margin-bottom: 1rem;
+    }
+    .promo-card {
+      margin-bottom: 1.5rem;
+      background-color: var(--accent-color, #f9f9f9);
+      padding: 1rem;
+      border-radius: 6px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+    .promo-card h3 {
+      margin-bottom: 0.5rem;
+      color: #333;
+      font-size: 1.2rem;
+    }
+    .promo-card p {
+      font-size: 1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+    .promo-card a.promo-btn {
+      display: inline-block;
+      margin-top: 0.5rem;
+      padding: 0.5rem 1rem;
+      background-color: var(--secondary-color, #7cc244);
+      color: #fff;
+      border-radius: 4px;
+      font-weight: 600;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
+    }
+    .promo-card a.promo-btn:hover {
+      background-color: var(--primary-color, #2a93d2);
+    }
+
+    /* Pricing Tiers, Factors, Additional Services (unchanged) */
+    .pricing-tiers, .factors-section, .additional-services {
+      background-color: var(--accent-color, #f9f9f9);
+      padding: 2rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+      margin-top: 2rem;
+    }
+    .pricing-tiers h2,
+    .factors-section h2,
+    .additional-services h2 {
+      font-size: 1.8rem;
+      color: var(--primary-color, #2a93d2);
+      margin-bottom: 1rem;
+    }
+    .tier-cards {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    @media (min-width: 768px) {
+      .tier-cards {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .tier-card {
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+      padding: 1.5rem;
+      transition: transform 0.2s ease;
+    }
+    .tier-card:hover {
+      transform: translateY(-3px);
+    }
+    .tier-card h3 {
+      font-size: 1.4rem;
+      color: var(--primary-color, #2a93d2);
+      margin-bottom: 0.5rem;
+    }
+    .tier-card ul {
+      list-style: none;
+      padding-left: 0;
+      margin-bottom: 1rem;
+    }
+    .tier-card li {
+      margin-bottom: 0.5rem;
+    }
+    .tier-card .price-start {
+      font-weight: bold;
+      color: #555;
+    }
+    .factors-section ul {
+      list-style: square;
+      margin-left: 1.5rem;
+    }
+    .additional-services ul {
+      list-style: none;
+      padding-left: 0;
+    }
+    .additional-services li {
+      margin-bottom: 1rem;
+      border-left: 4px solid var(--primary-color, #2a93d2);
+      padding-left: 0.75rem;
+    }
+
+  
+   /* Media Queries for Larger Screens */
+   @media (max-width: 500px) {
+    .hero-pricing {
+        height: 65vh;
+    }
+    .hero-pricing .hero-content {
+        padding-top: 2rem;
+        margin-top: 2rem;
+      }
+    .hero-pricing .hero-content h1 {
+      font-size: 2.3rem;
+    }
+    .hero-pricing .hero-content p {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-height: 550px){
+     /* Media Queries for Larger Screens */
+     .hero-pricing {
+        height: 95vh;
+     }
+    .hero-pricing .hero-content {
+      margin-top: 4rem;
+      margin-bottom: 1rem;
+      padding-top: 2rem;
+    }
+    .hero-pricing .hero-content h1 {
+        margin-bottom: 0.1rem;
+      }
+
+    .hero-pricing .hero-content p {
+        margin-bottom: 0.5rem;
+      }
+
+    .btn-hero {
+        padding: 0.5rem;
+        font-weight: 300;
+    }
+  }
+  </style>
+</head>
+<body>
+  <!-- TOP BAR & NAV -->
+  <header>
+    <div class="top-bar">
+      <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="index.html">
+            <img
+              src="images/logo.png"
+              alt="4ALL Windsor Cleaning Services Logo"
+            />
+          </a>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+            <span class="text">1609 Moy Ave, Windsor, ON</span>
+          </div>
+          <div class="contact-item">
+            <span class="icon"><i class="fas fa-phone-alt"></i></span>
+            <span class="text">
+              <a href="tel:2267877976">226-787-7976</a>
+            </span>
+          </div>
+          <div class="contact-item">
+            <span class="icon"><i class="fas fa-envelope"></i></span>
+            <span class="text">
+              <a href="mailto:info@4allwindsorcleaning.com">info@4allwindsorcleaning.com</a>
+            </span>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="top-bar-cta-button">
+          <a id="callbackBtn" href="#callback" class="btn-cta fade-text">
+            <span class="text-full">Get a Call Back</span>
+            <span class="text-short">Call Back</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <!-- "Know the Price" leading to this same page or #prices -->
+        <li><a href="promotions.html">Know the Price</a></li>
+        <li><a href="portfolio.html">Our Work</a></li>
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- HERO PRICING -->
+  <section class="hero-pricing">
+    <div class="hero-content">
+      <h1>Pricing &amp; Promotions</h1>
+      <p>Transparent Rates, Interactive Calculator, and Exciting Offers</p>
+      <!-- This button jumps to the promotions column below -->
+      <a href="#promotions" class="promotions-btn">REQUEST A QUOTE</a>
+    </div>
+  </section>
+
+  <!-- MAIN PRICING CONTENT -->
+  <main class="pricing-container">
+    <h1>Flexible Rates &amp; Special Deals</h1>
+    <p>
+      At 4All Windsor Cleaning Services, we keep pricing 
+      <strong>transparent</strong> and <strong>fair</strong>. Our base rate is 
+      <strong>$40/hour per cleaner</strong>. If two cleaners come, they'll finish 
+      in half the time, but total cost typically remains the same (2 x $40/hr).
+    </p>
+    <p>
+      Use our quick calculator for a rough estimate, or explore our 
+      <strong>Promotions</strong> on the right for extra savings!
+    </p>
+
+    <!-- 3-COLUMN WRAPPER: Hourly, Calculator, Promotions -->
+    <div class="pricing-flex">
+      <!-- Hourly Guidelines Column -->
+      <section class="hourly-section">
+        <h2>Approx. Hour Guidelines</h2>
+        <p>
+          Single-person hours give you a reference. A 3-bed home might be 
+          4-5 hours for one cleaner (or 2-2.5 hours if two come).
+        </p>
+        <table class="hourly-table">
+          <thead>
+            <tr>
+              <th>Home Size</th>
+              <th>Single-Person Hours</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1-2 Beds (under 1,000 sq ft)</td>
+              <td>2-3 hours</td>
+            </tr>
+            <tr>
+              <td>3 Beds (1,000-1,500 sq ft)</td>
+              <td>3-5 hours</td>
+            </tr>
+            <tr>
+              <td>4 Beds (1,500-2,000 sq ft)</td>
+              <td>5-7 hours</td>
+            </tr>
+            <tr>
+              <td>5+ Beds (2,000+ sq ft)</td>
+              <td>7+ hours</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="disclaimer">
+          *Deep cleans, move-out, or post-construction may add extra hours.
+        </div>
+      </section>
+
+      <!-- Calculator Column -->
+      <section class="calculator-section">
+        <h2>Estimate Your Costs</h2>
+        <p>
+          Select how you’d like to estimate: by room count or square footage. 
+          We multiply total hours by $40/hour per cleaner.
+        </p>
+        <form class="calc-form" onsubmit="calculateEstimate(event)">
+          <!-- Estimation Method -->
+          <label for="calcMethod">Estimation Method:</label>
+          <select id="calcMethod">
+            <option value="rooms">Rooms &amp; Baths</option>
+            <option value="sqft">Square Footage</option>
+          </select>
+
+          <!-- Rooms & Bathrooms -->
+          <div id="roomsSection">
+            <label for="bedrooms">Bedrooms:</label>
+            <input type="number" id="bedrooms" min="0" placeholder="e.g. 3" />
+
+            <label for="bathrooms">Bathrooms:</label>
+            <input type="number" id="bathrooms" min="0" placeholder="e.g. 2" />
+
+            <label for="kitchens">Kitchens:</label>
+            <input type="number" id="kitchens" min="0" placeholder="e.g. 1" />
+          </div>
+
+          <!-- Square Footage -->
+          <div id="sqftSection" style="display:none;">
+            <label for="squareFootage">Total Sq Ft:</label>
+            <input type="number" id="squareFootage" min="0" placeholder="e.g. 1500" />
+          </div>
+
+          <!-- Cleaning Type -->
+          <label for="cleanType">Cleaning Type:</label>
+          <select id="cleanType">
+            <option value="standard">Standard</option>
+            <option value="deep">Deep</option>
+            <option value="move">Move-In/Move-Out</option>
+            <option value="post">Post-Construction</option>
+          </select>
+
+          <!-- Add-ons -->
+          <div class="add-ons">
+            <p><strong>Add-Ons (Optional):</strong></p>
+            <label><input type="checkbox" name="addon" value="0.5"> Oven (+0.5hr)</label>
+            <label><input type="checkbox" name="addon" value="0.5"> Fridge (+0.5hr)</label>
+            <label><input type="checkbox" name="addon" value="1"> Windows (+1hr)</label>
+          </div>
+
+          <div class="button-group">
+            <button type="submit">Calculate</button>
+            <button type="reset" onclick="resetEstimate()">Reset</button>
+          </div>
+
+          <div class="estimate-result" id="estimateResult"></div>
+        </form>
+        <div class="disclaimer">
+          *Final cost may differ after we assess your home’s actual condition.
+        </div>
+      </section>
+
+      <!-- Promotions Column (ID = promotions) -->
+      <section class="promotions-section" id="promotions">
+        <h2>Current Promotions</h2>
+
+        <div class="promo-card">
+          <h3>Refer-a-Friend</h3>
+          <p>Bring a friend on board, and both of you get <strong>$20 off</strong> your next clean!</p>
+          <a href="#promotions" class="promo-btn">Redeem Offer</a>
+        </div>
+
+        <div class="promo-card">
+          <h3>Loyalty Discount</h3>
+          <p>After your 3rd cleaning, enjoy a <strong>10% discount</strong> on all subsequent visits.</p>
+          <a href="#promotions" class="promo-btn">Sign Up</a>
+        </div>
+
+        <div class="promo-card">
+          <h3>Seasonal Deep Clean</h3>
+          <p>Book a Deep Clean this month and get <strong>15% off</strong> any add-on like oven or window cleaning.</p>
+          <a href="#promotions" class="promo-btn">View Details</a>
+        </div>
+      </section>
+    </div> <!-- end .pricing-flex -->
+
+    <!-- Pricing Tiers Section -->
+    <section class="pricing-tiers">
+      <h2>Package Tiers at a Glance</h2>
+      <p>
+        Want a ballpark figure? These sample packages offer a quick snapshot. 
+        Actual cost still depends on your home’s size and condition.
+      </p>
+      <div class="tier-cards">
+        <!-- Tier 1 -->
+        <div class="tier-card">
+          <h3>Essential Sparkle</h3>
+          <ul>
+            <li>Dust & wipe key surfaces</li>
+            <li>Vacuum & mop floors</li>
+            <li>Basic kitchen & bathroom</li>
+          </ul>
+          <p class="price-start">Starts at <strong>$120</strong> (~3 hours)</p>
+        </div>
+        <!-- Tier 2 -->
+        <div class="tier-card">
+          <h3>Deep Refresh</h3>
+          <ul>
+            <li>All Essential Sparkle tasks</li>
+            <li>Detailed baseboards & fixtures</li>
+            <li>Scrub bathroom tiles/grout</li>
+            <li>Inside cabinets (if empty)</li>
+          </ul>
+          <p class="price-start">Starts at <strong>$200</strong> (~5 hours)</p>
+        </div>
+        <!-- Tier 3 -->
+        <div class="tier-card">
+          <h3>Ultra Premium</h3>
+          <ul>
+            <li>All Deep Refresh tasks</li>
+            <li>Oven & fridge interior</li>
+            <li>Spot-clean walls/windows</li>
+            <li>Polish & detailing throughout</li>
+          </ul>
+          <p class="price-start">Starts at <strong>$320</strong> (~8 hours)</p>
+        </div>
+      </div>
+      <p>
+        Each home is unique. These tiers are a quick reference; final 
+        hours and pricing may vary.
+      </p>
+    </section>
+
+    <!-- Price Factors Section -->
+    <section class="factors-section">
+      <h2>What Affects the Price?</h2>
+      <ul>
+        <li><strong>Square Footage &amp; Rooms:</strong> Bigger space, more hours.</li>
+        <li><strong>Type of Cleaning:</strong> Deep, Move-In/Out, Post-Construction need added time.</li>
+        <li><strong>Pets &amp; Clutter:</strong> Pet hair or heavy tidying adds effort.</li>
+        <li><strong>Add-Ons:</strong> Ovens, fridges, interior windows, etc.</li>
+        <li><strong>Frequency:</strong> Routine clients see fewer hours & costs after the first visit.</li>
+      </ul>
+    </section>
+
+    <!-- Additional Services or Info -->
+    <section class="additional-services">
+      <h2>More Services &amp; Discounts</h2>
+      <ul>
+        <li><strong>Recurring Plans:</strong> Weekly/biweekly cleaning can unlock extra loyalty discounts.</li>
+        <li><strong>Move-In/Out Cleans:</strong> Great for leaving a place spotless or settling in fresh.</li>
+        <li><strong>Post-Renovation:</strong> We handle leftover dust, debris, and paint splatter.</li>
+        <li><strong>Custom Schedules:</strong> We tailor to your needs—just ask!</li>
+      </ul>
+      <p>
+        <em>Need something special?</em> <strong>Contact us</strong> for a customized quote or 
+        to combine multiple deals if applicable. 
+      </p>
+    </section>
+  </main>
+
+  <!-- FOOTER (Colorful wave footer) -->
+  <footer class="colorful-wave-footer">
+    <div class="footer-content">
+      <div class="footer-columns">
+        <!-- Column 1: Logo & Tagline -->
+        <div class="footer-col">
+          <img
+            src="images/footer-logo.png"
+            alt="4All Windsor Cleaning Services Logo"
+            class="footer-logo"
+          />
+          <p class="footer-tagline">Cleaning you can count on—every single time</p>
+        </div>
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="services.html">Services</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="blog.html">Blog</a></li>
+            <!-- The user wanted 'Know the Price' as a menu item too -->
+            <li><a href="pricing.html">Know the Price</a></li>
+            <li><a href="testimonials.html">Testimonials</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Column 3: Newsletter & Social -->
+        <div class="footer-col">
+          <h3>Stay in the Loop</h3>
+          <p>
+            Sign up for special offers and cleaning tips delivered right to you.
+          </p>
+          <form action="#" method="post" class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required/>
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/profile.php?id=61570919773833"
+              target="_blank"
+              class="facebook-icon"
+              aria-label="Facebook"
+            ><i class="fab fa-facebook-f"></i></a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="social-icon"
+            ><i class="fab fa-instagram"></i></a>
+            <a
+              href="https://x.com/4AllWindsor"
+              target="_blank"
+              class="twitter-icon"
+              aria-label="Twitter"
+            ><i class="fab fa-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="current-year"></span> 4All Windsor Cleaning Services.
+          All rights reserved.
+        </p>
+        <p>
+          <a href="privacy.html">Privacy Policy</a> |
+          <a href="terms.html">Terms of Service</a>
+        </p>
+      </div>
+    </div>
+    <div class="tilt-overlay"></div>
+  </footer>
+
+  <!-- Minimal JavaScript for the Calculator -->
+  <script>
+    // Update year
+    document.getElementById("current-year").textContent = new Date().getFullYear();
+
+    function calculateEstimate(e) {
+      e.preventDefault();
+
+      const method = document.getElementById('calcMethod').value;
+      let totalHours = 0;
+
+      // Gather fields
+      const bedrooms = parseFloat(document.getElementById('bedrooms').value) || 0;
+      const bathrooms = parseFloat(document.getElementById('bathrooms').value) || 0;
+      const kitchens = parseFloat(document.getElementById('kitchens').value) || 0;
+      const sqft = parseFloat(document.getElementById('squareFootage').value) || 0;
+      const cleanType = document.getElementById('cleanType').value;
+
+      // Basic logic references:
+      // For rooms: bedrooms * 0.5 + bathrooms * 0.5 + kitchens * 0.5. Min 2 hours.
+      // For sqft: ~0.001 hr/sq ft, min 2 hours
+      if (method === 'rooms') {
+        totalHours = (bedrooms * 0.5) + (bathrooms * 0.5) + (kitchens * 0.5);
+        if (totalHours < 2) totalHours = 2;
+      } else {
+        // By square footage
+        totalHours = sqft * 0.001;
+        if (totalHours < 2) totalHours = 2;
+      }
+
+      // Adjust for cleaning type
+      let typeMultiplier = 1;
+      if (cleanType === 'deep') typeMultiplier = 1.3;
+      else if (cleanType === 'move') typeMultiplier = 1.4;
+      else if (cleanType === 'post') typeMultiplier = 1.6;
+
+      totalHours *= typeMultiplier;
+
+      // Add-ons
+      const addons = document.querySelectorAll('input[name="addon"]:checked');
+      addons.forEach(checkbox => {
+        totalHours += parseFloat(checkbox.value);
+      });
+
+      // Round up
+      totalHours = Math.ceil(totalHours);
+
+      // $40/hour single-person rate
+      const totalCost = totalHours * 40;
+
+      // Show result
+      const resultDiv = document.getElementById('estimateResult');
+      resultDiv.innerHTML = `
+        <p>
+          <strong>Estimated Single-Person Hours:</strong> ${totalHours} hr(s)
+          <br/>
+          <strong>Total Approx. Cost:</strong> $${totalCost.toFixed(2)}<br/>
+          <small>
+            If two cleaners come, they'd likely finish in ~${(totalHours/2).toFixed(1)} 
+            clock hours, but total cost remains about $${totalCost}.
+          </small>
+        </p>
+      `;
+    }
+
+    function resetEstimate() {
+      document.getElementById('estimateResult').innerHTML = '';
+    }
+
+    // Toggle between rooms & sqft
+    const calcMethodSelect = document.getElementById('calcMethod');
+    const roomsSection = document.getElementById('roomsSection');
+    const sqftSection = document.getElementById('sqftSection');
+
+    calcMethodSelect.addEventListener('change', () => {
+      if (calcMethodSelect.value === 'rooms') {
+        roomsSection.style.display = 'block';
+        sqftSection.style.display = 'none';
+      } else {
+        roomsSection.style.display = 'none';
+        sqftSection.style.display = 'block';
+      }
+    });
+  </script>
+
+  <!-- Additional Scripts (Hamburger, Nav, etc.) if needed -->
+  <script src="javascript/top-bar.js"></script>
+  <script src="javascript/hamburger.js"></script>
+  <script src="javascript/navigation-bar.js"></script>
+  <script src="javascript/general.js"></script>
+  <script src="javascript/hero.js"></script>
+  <script src="javascript/services.js"></script>
+</body>
+</html>

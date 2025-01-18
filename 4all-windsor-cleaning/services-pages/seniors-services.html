@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Seniors Services | 4All Windsor Cleaning Services</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome for Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+
+  <!-- SEO Meta Tags -->
+  <meta
+    name="description"
+    content="Senior-focused cleaning services in Windsor. Gentle, reliable, and safe for our older community members."
+  />
+  <meta
+    name="keywords"
+    content="senior cleaning, gentle cleaning, assisted cleaning, Windsor seniors, housekeeping for seniors"
+  />
+  <meta name="author" content="4All Windsor Cleaning Services" />
+
+  <!-- External CSS (Site-Wide) -->
+  <link rel="stylesheet" href="../styles/general.css" />
+  <link rel="stylesheet" href="../styles/top-bar.css" />
+  <link rel="stylesheet" href="../styles/navigation-bar.css" />
+  <link rel="stylesheet" href="../styles/hamburger.css" />
+  <link rel="stylesheet" href="../styles/footer.css" />
+
+  <!-- Page-Specific CSS: Seniors -->
+  <style>
+    /* Hero */
+    .hero-seniors {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      background: url('../images/hero-seniors-services.jpg') center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+    .hero-seniors::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+      clip-path: polygon(0 0, 100% 2%, 100% 98%, 0 100%);
+      animation: seniorsTilt 10s ease-in-out infinite alternate;
+    }
+    @keyframes seniorsTilt {
+      0% {
+        clip-path: polygon(0 0, 100% 2%, 100% 98%, 0 100%);
+      }
+      50% {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+      }
+      100% {
+        clip-path: polygon(0 0, 100% 2%, 100% 98%, 0 100%);
+      }
+    }
+    .hero-seniors .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 0 1rem;
+    }
+    .hero-seniors .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+    .hero-seniors .hero-content p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    .btn-hero {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      background-color: var(--secondary-color);
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    .btn-hero:hover {
+      background-color: var(--primary-color);
+      color: white;
+    }
+
+    main {
+      width: 90%;
+      max-width: 1200px;
+      margin: 3rem auto;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+    section p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+    .intro-seniors,
+    .why-seniors,
+    .seniors-options,
+    .seniors-testimonials,
+    .seniors-cta {
+      margin-bottom: 3rem;
+    }
+
+    .why-seniors ul {
+      list-style: square;
+      margin-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .why-seniors li {
+      margin-bottom: 0.5rem;
+    }
+
+    .seniors-options h3 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+      color: var(--color-dark);
+      display: flex;
+      align-items: center;
+    }
+    .seniors-options i {
+      margin-right: 0.5rem;
+      color: var(--primary-color);
+    }
+    .seniors-options p {
+      margin-bottom: 1.5rem;
+    }
+
+    /* Final CTA */
+    .seniors-cta {
+      text-align: center;
+    }
+    .seniors-cta p {
+      max-width: 800px;
+      margin: 0 auto 1.5rem auto;
+    }
+    .cta-button {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: var(--secondary-color);
+      color: white;
+    }
+
+    /* Responsive */
+    @media (min-width: 900px) {
+      .hero-seniors .hero-content h1 {
+        font-size: 3.5rem;
+      }
+      .hero-seniors .hero-content p {
+        font-size: 1.5rem;
+      }
+    }
+    @media (max-width: 500px) {
+      .hero-seniors {
+        height: 60vh;
+      }
+      .hero-seniors .hero-content h1 {
+        font-size: 2.4rem;
+      }
+    }
+
+  
+   /* Media Queries for Larger Screens */
+   @media (max-width: 500px) {
+    .hero-seniors {
+        height: 65vh;
+    }
+    .hero-seniors .hero-content {
+        padding-top: 2rem;
+        margin-top: 2rem;
+      }
+    .hero-seniors .hero-content h1 {
+      font-size: 2.3rem;
+    }
+    .hero-seniors .hero-content p {
+      font-size: 1rem;
+    }
+    .intro-seniors,
+    .why-seniors,
+    .seniors-options,
+    .seniors-testimonials,
+    .seniors-cta {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-height: 550px){
+     /* Media Queries for Larger Screens */
+     .hero-seniors {
+        height: 95vh;
+     }
+    .hero-seniors .hero-content {
+      margin-top: 4rem;
+      margin-bottom: 1rem;
+      padding-top: 2rem;
+    }
+    .hero-seniors .hero-content h1 {
+        margin-bottom: 0.1rem;
+      }
+
+    .hero-seniors .hero-content p {
+        margin-bottom: 0.5rem;
+      }
+
+    .btn-hero {
+        padding: 0.5rem;
+        font-weight: 300;
+    }
+  }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "4All Windsor Cleaning Services",
+    "description": "Senior-focused cleaning services for a safe, gentle, and reliable experience in Windsor.",
+    "image": "https://4allwindsorcleaning.ca/images/logo.png",
+    "@id": "https://4allwindsorcleaning.ca",
+    "url": "https://4allwindsorcleaning.ca",
+    "telephone": "+12267877976",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1609 Moy Ave",
+      "addressLocality": "Windsor",
+      "addressRegion": "ON",
+      "postalCode": "N8X 3J9",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.30482786158251,
+      "longitude": -83.00772270371917
+    },
+    "openingHours": [
+      "Mo-Fr 07:00-22:00",
+      "Sa 08:00-20:00",
+      "Su 09:00-18:00"
+    ],
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61570919773833",
+      "https://x.com/4AllWindsor"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Top Bar -->
+  <header>
+    <div class="top-bar">
+      <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="../index.html">
+            <img
+              src="../images/logo.png"
+              alt="4All Windsor Cleaning Services Logo"
+            />
+          </a>
+        </div>
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+            <span class="text">1609 Moy Ave, Windsor, ON</span>
+          </div>
+          <div class="contact-item">
+            <span class="icon"><i class="fas fa-phone-alt"></i></span>
+            <span class="text">
+              <a href="tel:2267877976">226-787-7976</a>
+            </span>
+          </div>
+          <div class="contact-item">
+            <span class="icon"><i class="fas fa-envelope"></i></span>
+            <span class="text">
+              <a href="mailto:info@4allwindsorcleaning.com">info@4allwindsorcleaning.com</a>
+            </span>
+          </div>
+        </div>
+        <!-- CTA -->
+        <div class="top-bar-cta-button">
+          <a id="callbackBtn" href="#callback" class="btn-cta fade-text">
+            <span class="text-full">Get a Call Back</span>
+            <span class="text-short">Call Back</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Nav -->
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../services.html#seniors-services" class="active">Services</a></li>
+        <li><a href="../promotions.html">Know the Price</a></li>
+        <li><a href="../portfolio.html">Our Work</a></li>
+        <li><a href="../contact.html">Contact Us</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <header class="hero-seniors">
+    <div class="hero-content">
+      <h1>Seniors Services</h1>
+      <p>Gentle, Reliable Cleaning for Our Valued Older Community</p>
+      <a href="#book-now" class="btn-hero">Book Now</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- INTRO -->
+    <section class="intro-seniors">
+      <h2>Cleaning with Care</h2>
+      <p>
+        Our Seniors Services prioritize safety, respect, and a gentle touch. 
+        We understand the unique needs of seniors, from minimizing heavy lifting 
+        to using safe, non-toxic products. Let us help maintain a comfortable, 
+        tidy environment that fosters independence and well-being.
+      </p>
+    </section>
+
+    <!-- WHY SENIORS -->
+    <section class="why-seniors">
+      <h2>Why Choose Our Senior-Focused Cleaning?</h2>
+      <ul>
+        <li><strong>Safety First:</strong> Our team is trained to avoid trip hazards 
+          and handle fragile items with utmost care.</li>
+        <li><strong>Respect & Empathy:</strong> We treat our senior clients like family, 
+          always mindful of personal space and preferences.</li>
+        <li><strong>Flexible Scheduling:</strong> Choose weekly, biweekly, or monthly 
+          visits based on comfort and needs.</li>
+      </ul>
+    </section>
+
+    <!-- SENIORS OPTIONS -->
+    <section class="seniors-options">
+      <h2>Services Tailored to Seniors</h2>
+      <h3><i class="fas fa-heart"></i> Gentle Cleaning</h3>
+      <p>We use mild, low-odor products and carefully handle furniture and belongings.</p>
+
+      <h3><i class="fas fa-hands-helping"></i> Safety-Assisted Tasks</h3>
+      <p>Light organizing, bed-making, and ensuring floors are free of clutter or spills.</p>
+
+      <h3><i class="fas fa-clock"></i> Personalized Scheduling</h3>
+      <p>We adapt to routines and can work around medical appointments or family visits.</p>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="seniors-testimonials">
+      <h2>What Our Senior Clients Say</h2>
+      <blockquote>
+        <p>
+          “They clean so gently and thoroughly. My mom feels safe and 
+          happy every time they come.”
+        </p>
+        <footer>— Andrea S., Daughter of Senior Client</footer>
+      </blockquote>
+      <blockquote>
+        <p>
+          “They understand my pace, help with light chores, and never rush me. 
+          My home has never looked better.”
+        </p>
+        <footer>— Mr. L., Retiree in LaSalle</footer>
+      </blockquote>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="book-now" class="seniors-cta">
+      <h2>Ready for a Gentle, Reliable Clean?</h2>
+      <p>
+        Trust our team to care for your home with compassion and attention 
+        to detail—helping seniors maintain a safe, pleasant environment.
+      </p>
+      <a href="../contact.html" class="cta-button">Book Now</a>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="colorful-wave-footer">
+    <div class="footer-content">
+      <div class="footer-columns">
+        <!-- Column 1 -->
+        <div class="footer-col">
+          <img
+            src="../images/footer-logo.png"
+            alt="4All Windsor Cleaning Services Logo"
+            class="footer-logo"
+          />
+          <p class="footer-tagline">Cleaning you can count on—every single time</p>
+        </div>
+        <!-- Column 2 -->
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../promotions.html">Promotions</a></li>
+            <li><a href="../testimonials.html">Testimonials</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Column 3 -->
+        <div class="footer-col">
+          <h3>Stay in the Loop</h3>
+          <p>
+            Sign up for special offers and cleaning tips delivered right to you.
+          </p>
+          <form action="#" method="post" class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/profile.php?id=61570919773833"
+              target="_blank"
+              class="facebook-icon"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="social-icon"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://x.com/4AllWindsor"
+              target="_blank"
+              class="twitter-icon"
+              aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="current-year"></span> 4All Windsor Cleaning Services.
+          All rights reserved.
+        </p>
+        <p>
+          <a href="../privacy.html">Privacy Policy</a> |
+          <a href="../terms.html">Terms of Service</a>
+        </p>
+      </div>
+    </div>
+    <div class="tilt-overlay"></div>
+  </footer>
+
+  <script src="../javascript/top-bar.js"></script>
+  <script src="../javascript/hamburger.js"></script>
+  <script src="../javascript/navigation-bar.js"></script>
+  <script src="../javascript/general.js"></script>
+  <script src="../javascript/hero.js"></script>
+  <script src="../javascript/services.js"></script>
+
+</body>
+</html>

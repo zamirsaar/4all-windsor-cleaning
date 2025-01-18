@@ -1,0 +1,250 @@
+/* Routines Cleaning Page Specific */
+.hero-routine {
+    position: relative;
+    width: 100%;
+    height: 70vh;
+    background: url('../images/hero-routine-cleaning.jpg') center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    text-align: center;
+  }
+  
+  .hero-routine::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.6);
+    z-index: 1;
+    clip-path: polygon(0 0, 100% 2%, 100% 98%, 0 100%);
+    animation: routineTilt 10s ease-in-out infinite alternate;
+  }
+  
+  @keyframes routineTilt {
+    0% {
+      clip-path: polygon(0 0, 100% 2%, 100% 98%, 0 100%);
+    }
+    50% {
+      clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+    }
+    100% {
+      clip-path: polygon(0 0, 100% 2%, 100% 98%, 0 100%);
+    }
+  }
+  
+  .hero-routine .hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 700px;
+    padding-top: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .hero-routine .hero-content h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    color: white;
+  }
+  
+  .hero-routine .hero-content p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+  }
+  
+  .btn-hero {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    background-color: var(--secondary-color);
+    color: #fff;
+    font-weight: 600;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    transition: background-color 0.3s ease;
+  }
+  .btn-hero:hover {
+    background-color: var(--color-primary);
+  }
+  
+  .introduction,
+  .why-routine,
+  .options,
+  .what-included,
+  .process,
+  .testimonials,
+  .final-cta {
+    width: 90%;
+    max-width: 1200px;
+    margin: 3rem auto;
+  }
+  
+  .introduction h2,
+  .why-routine h2,
+  .options h2,
+  .what-included h2,
+  .process h2,
+  .testimonials h2,
+  .final-cta h2 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
+  
+  .introduction p,
+  .why-routine p,
+  .options p,
+  .what-included p,
+  .process p,
+  .testimonials p,
+  .final-cta p {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.6;
+  }
+  
+  .why-routine ul,
+  .what-included ul {
+    list-style: square;
+    margin-left: 2rem;
+  }
+
+  .process ol {
+    padding-left: 2rem;
+  }
+  
+  /* Options Grid */
+  .options-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  @media (min-width: 700px) {
+    .options-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  .option-card {
+    background-color: var(--accent-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+  }
+  .option-card:hover {
+    transform: translateY(-5px);
+  }
+  .option-card h3 {
+    margin-bottom: 0.75rem;
+    color: var(--color-dark);
+    display: flex;
+    align-items: center;
+    font-size: 1.25rem;
+  }
+  .option-card h3 i {
+    margin-right: 0.5rem;
+    color: var(--primary-color);
+  }
+  .option-card p {
+    font-size: 1rem;
+    color: #555;
+  }
+  
+  /* Final CTA */
+  .final-cta {
+    text-align: center;
+  }
+  .final-cta h2 {
+    text-align: center;
+  }
+  .final-cta p {
+    max-width: 800px;
+    margin: 0 auto 1.5rem auto;
+    text-align: center;
+  }
+  .final-cta-button {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: 4px;
+    text-transform: uppercase;
+    font-weight: 600;
+    transition: background-color 0.3s ease;
+
+  }
+  .final-cta-button:hover {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  
+
+   /* Media Queries for Larger Screens */
+   @media (min-width: 900px) {
+    .hero-routine .hero-content h1 {
+      font-size: 3.5rem;
+    }
+    .hero-routine .hero-content p {
+      font-size: 1rem;
+    }
+    .introduction h2,
+    .why-routine h2,
+    .options h2,
+    .what-included h2,
+    .process h2,
+    .final-cta h2 {
+      font-size: 2.5rem;
+    }
+  }
+  
+   /* Media Queries for Larger Screens */
+   @media (max-width: 500px) {
+    .hero-routine {
+        height: 65vh;
+    }
+    .hero-routine .hero-content {
+        padding-top: 2rem;
+        margin-top: 2rem;
+      }
+    .hero-routine .hero-content h1 {
+      font-size: 2.3rem;
+    }
+    .hero-routine .hero-content p {
+      font-size: 1rem;
+    }
+    .introduction h2,
+    .why-routine h2,
+    .options h2,
+    .what-included h2,
+    .process h2,
+    .final-cta h2 {
+      font-size: 2.5rem;
+    }
+  }
+  
+  @media (max-height: 550px){
+     /* Media Queries for Larger Screens */
+     .hero-routine {
+        height: 95vh;
+     }
+    .hero-routine .hero-content {
+      margin-top: 4rem;
+      margin-bottom: 1rem;
+      padding-top: 2rem;
+    }
+    .hero-routine .hero-content h1 {
+        margin-bottom: 0.1rem;
+      }
+
+    .hero-routine .hero-content p {
+        margin-bottom: 0.5rem;
+      }
+
+    .btn-hero {
+        padding: 0.5rem;
+        font-weight: 300;
+    }
+  }

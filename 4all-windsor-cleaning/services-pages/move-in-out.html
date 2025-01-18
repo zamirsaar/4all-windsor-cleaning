@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Move In/Out Cleaning | 4All Windsor Cleaning Services</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&family=Playfair+Display:wght@700&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Font Awesome for Icons -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+  />
+
+  <!-- SEO Meta Tags -->
+  <meta
+    name="description"
+    content="Smooth your transition with our specialized Move In/Out cleaning services in Windsor."
+  />
+  <meta
+    name="keywords"
+    content="move in cleaning, move out cleaning, Windsor cleaning, apartment cleaning, rental cleaning"
+  />
+  <meta name="author" content="4All Windsor Cleaning Services" />
+
+  <!-- External CSS (Site-Wide) -->
+  <link rel="stylesheet" href="../styles/general.css" />
+  <link rel="stylesheet" href="../styles/top-bar.css" />
+  <link rel="stylesheet" href="../styles/navigation-bar.css" />
+  <link rel="stylesheet" href="../styles/hamburger.css" />
+  <link rel="stylesheet" href="../styles/footer.css" />
+
+  <!-- Page-Specific CSS: Move In/Out -->
+  <style>
+    /* Hero */
+    .hero-move {
+      position: relative;
+      width: 100%;
+      height: 70vh;
+      background: url('../images/hero-move-cleaning.jpg') center center / cover no-repeat;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #fff;
+      text-align: center;
+    }
+    .hero-move::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+      clip-path: polygon(0 0, 100% 2%, 100% 98%, 0 100%);
+      animation: moveTilt 10s ease-in-out infinite alternate;
+    }
+    @keyframes moveTilt {
+      0% {
+        clip-path: polygon(0 0, 100% 2%, 100% 98%, 0 100%);
+      }
+      50% {
+        clip-path: polygon(0 0, 100% 0%, 100% 100%, 0 100%);
+      }
+      100% {
+        clip-path: polygon(0 0, 100% 2%, 100% 98%, 0 100%);
+      }
+    }
+    .hero-move .hero-content {
+      position: relative;
+      z-index: 2;
+      max-width: 700px;
+      padding: 0 1rem;
+    }
+    .hero-move .hero-content h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      padding-top: 2rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+      color: white;
+    }
+    .hero-move .hero-content p {
+      font-size: 1.25rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    .btn-hero {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      background-color: var(--secondary-color);
+      color: #fff;
+      font-weight: 600;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    .btn-hero:hover {
+      background-color: var(--primary-color);
+    }
+
+    main {
+      width: 90%;
+      max-width: 1200px;
+      margin: 3rem auto;
+    }
+    section {
+      margin-bottom: 3rem;
+    }
+    section h2 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+      color: var(--primary-color);
+    }
+    section p {
+      font-size: 1.1rem;
+      color: #555;
+      line-height: 1.6;
+    }
+    .intro-move,
+    .why-move,
+    .process-move,
+    .move-checklist,
+    .move-testimonials,
+    .move-cta {
+      margin-bottom: 3rem;
+    }
+
+    /* Lists */
+    .why-move ul {
+      list-style: square;
+      margin-left: 2rem;
+      margin-bottom: 1.5rem;
+    }
+    .why-move li {
+      margin-bottom: 0.5rem;
+    }
+
+    .process-move ol {
+      list-style: decimal;
+      margin-left: 2rem;
+      color: #555;
+    }
+    .process-move li {
+      margin-bottom: 1rem;
+    }
+
+    .move-checklist ul {
+      list-style: none;
+      margin-left: 0;
+      padding-left: 0;
+    }
+    .move-checklist li {
+      background: url('https://via.placeholder.com/20/A8D5BA/2F93D2?text=+') 
+        no-repeat left center;
+      background-size: 16px 16px;
+      padding-left: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* Final CTA */
+    .move-cta {
+      text-align: center;
+    }
+    .move-cta p {
+      max-width: 800px;
+      margin: 0 auto 1.5rem auto;
+    }
+    .cta-button {
+      background-color: var(--primary-color);
+      color: #fff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 4px;
+      text-transform: uppercase;
+      font-weight: 600;
+      transition: background-color 0.3s ease;
+    }
+    .cta-button:hover {
+      background-color: var(--secondary-color);
+    }
+  
+   /* Media Queries for Larger Screens */
+   @media (max-width: 500px) {
+    .hero-move {
+        height: 65vh;
+    }
+    .hero-move .hero-content {
+        padding-top: 2rem;
+        margin-top: 2rem;
+      }
+    .hero-move .hero-content h1 {
+      font-size: 2.3rem;
+    }
+    .hero-move .hero-content p {
+      font-size: 1rem;
+    }
+    .intro-move,
+    .why-move,
+    .process-move,
+    .move-checklist,
+    .move-testimonials,
+    .move-cta {
+      font-size: 1.5rem;
+    }
+  }
+  
+  @media (max-height: 550px){
+     /* Media Queries for Larger Screens */
+     .hero-move {
+        height: 95vh;
+     }
+    .hero-move .hero-content {
+      margin-top: 4rem;
+      margin-bottom: 1rem;
+      padding-top: 2rem;
+    }
+    .hero-move .hero-content h1 {
+        margin-bottom: 0.1rem;
+      }
+
+    .hero-move .hero-content p {
+        margin-bottom: 0.5rem;
+      }
+
+    .btn-hero {
+        padding: 0.5rem;
+        font-weight: 300;
+    }
+  }
+  </style>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "4All Windsor Cleaning Services",
+    "description": "Move in/out cleaning services for a hassle-free transition. We serve Windsor, LaSalle, Tecumseh, and surrounding areas.",
+    "image": "https://4allwindsorcleaning.ca/images/logo.png",
+    "@id": "https://4allwindsorcleaning.ca",
+    "url": "https://4allwindsorcleaning.ca",
+    "telephone": "+12267877976",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "1609 Moy Ave",
+      "addressLocality": "Windsor",
+      "addressRegion": "ON",
+      "postalCode": "N8X 3J9",
+      "addressCountry": "CA"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": 42.30482786158251,
+      "longitude": -83.00772270371917
+    },
+    "openingHours": [
+      "Mo-Fr 07:00-22:00",
+      "Sa 08:00-20:00",
+      "Su 09:00-18:00"
+    ],
+    "priceRange": "$$",
+    "sameAs": [
+      "https://www.facebook.com/profile.php?id=61570919773833",
+      "https://x.com/4AllWindsor"
+    ]
+  }
+  </script>
+</head>
+<body>
+  <!-- Top Bar -->
+  <header>
+    <div class="top-bar">
+      <div class="container">
+        <!-- Logo -->
+        <div class="logo">
+          <a href="../index.html">
+            <img
+              src="../images/logo.png"
+              alt="4All Windsor Cleaning Services Logo"
+            />
+          </a>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="contact-info">
+          <div class="contact-item">
+            <span class="icon"><i class="fas fa-map-marker-alt"></i></span>
+            <span class="text">1609 Moy Ave, Windsor, ON</span>
+          </div>
+          <div class="contact-item">
+            <span class="icon"><i class="fas fa-phone-alt"></i></span>
+            <span class="text">
+              <a href="tel:2267877976">226-787-7976</a>
+            </span>
+          </div>
+          <div class="contact-item">
+            <span class="icon"><i class="fas fa-envelope"></i></span>
+            <span class="text">
+              <a href="mailto:info@4allwindsorcleaning.com">info@4allwindsorcleaning.com</a>
+            </span>
+          </div>
+        </div>
+
+        <!-- CTA Button -->
+        <div class="top-bar-cta-button">
+          <a id="callbackBtn" href="#callback" class="btn-cta fade-text">
+            <span class="text-full">Get a Call Back</span>
+            <span class="text-short">Call Back</span>
+          </a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Navigation -->
+  <nav class="navbar">
+    <div class="container">
+      <ul class="nav-menu">
+        <li><a href="../index.html">Home</a></li>
+        <li><a href="../about.html">About</a></li>
+        <li><a href="../services.html#move-in-out" class="active">Services</a></li>
+        <li><a href="../promotions.html">Know the Price</a></li>
+        <li><a href="../portfolio.html">Our Work</a></li>
+        <li><a href="../contact.html">Contact Us</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero-move">
+    <div class="hero-content">
+      <h1>Move In/Out Cleaning</h1>
+      <p>Transition with Ease—Leave the Cleaning to Us</p>
+      <a href="#book-now" class="btn-hero">Book Now</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- INTRODUCTION -->
+    <section class="intro-move">
+      <h2>Make Moving Hassle-Free</h2>
+      <p>
+        Our Move In/Out Cleaning service ensures every corner of your old or 
+        new home is spotless. Whether you’re preparing a place for its 
+        next resident or starting fresh in a new location, we’ll handle 
+        the deep clean, so you can focus on unpacking and settling in.
+      </p>
+    </section>
+
+    <!-- WHY CHOOSE -->
+    <section class="why-move">
+      <h2>Why Choose Our Move In/Out Service?</h2>
+      <ul>
+        <li><strong>Smooth Transition:</strong> Skip the stress of scrubbing floors 
+          and appliances—let us handle the final cleanup.</li>
+        <li><strong>Save Time & Effort:</strong> Ideal for landlords, tenants, or 
+          homeowners who want a hassle-free move.</li>
+        <li><strong>Get That Deposit Back:</strong> We clean thoroughly, helping 
+          you meet lease requirements and retain your deposit.</li>
+      </ul>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="process-move">
+      <h2>Our 4-Step Process</h2>
+      <ol>
+        <li><strong>Assessment:</strong> We check which areas need extra TLC 
+          (fridge, oven, walls, cabinets).</li>
+        <li><strong>Customized Plan:</strong> Based on the home’s condition, 
+          we create a focused cleaning checklist.</li>
+        <li><strong>Deep Clean:</strong> Our team tackles built-up grime, 
+          sanitizes surfaces, and cleans inside cabinets and appliances.</li>
+        <li><strong>Final Touches:</strong> We ensure floors, windowsills, 
+          and bathrooms sparkle, ready for the next occupant.</li>
+      </ol>
+    </section>
+
+    <!-- MOVE CHECKLIST -->
+    <section class="move-checklist">
+      <h2>What’s Typically Included</h2>
+      <ul>
+        <li>Vacuuming/Mopping all floors, carpets, and rugs</li>
+        <li>Cleaning inside cabinets, drawers, and closets</li>
+        <li>Scrubbing kitchen appliances (oven, microwave, etc.)</li>
+        <li>Disinfecting bathrooms (tub, toilet, sink, mirrors)</li>
+        <li>Wiping down doors, light switches, and baseboards</li>
+        <li>Removing any trash and debris left behind</li>
+      </ul>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="move-testimonials">
+      <h2>What Our Clients Say</h2>
+      <blockquote>
+        <p>
+          “4All Windsor helped us leave our old apartment spotless. We got 
+          our full deposit back, and the landlord was super impressed!”
+        </p>
+        <footer>— Emily R., Downtown Windsor</footer>
+      </blockquote>
+      <blockquote>
+        <p>
+          “Arriving to a totally clean new house made unpacking so much 
+          easier. Highly recommend their move-in service.”
+        </p>
+        <footer>— Marcus T., Tecumseh</footer>
+      </blockquote>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section id="book-now" class="move-cta">
+      <h2>Ready to Make Your Move Simpler?</h2>
+      <p>
+        Book our Move In/Out Cleaning service today, and step into 
+        your new home stress-free—or leave your old place 
+        in immaculate condition.
+      </p>
+      <a href="../contact.html" class="cta-button">Book Now</a>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="colorful-wave-footer">
+    <div class="footer-content">
+      <div class="footer-columns">
+        <!-- Column 1: Logo & Tagline -->
+        <div class="footer-col">
+          <img
+            src="../images/footer-logo.png"
+            alt="4All Windsor Cleaning Services Logo"
+            class="footer-logo"
+          />
+          <p class="footer-tagline">Cleaning you can count on—every single time</p>
+        </div>
+        <!-- Column 2: Quick Links -->
+        <div class="footer-col">
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="../services.html">Services</a></li>
+            <li><a href="../about.html">About</a></li>
+            <li><a href="../blog.html">Blog</a></li>
+            <li><a href="../promotions.html">Promotions</a></li>
+            <li><a href="../testimonials.html">Testimonials</a></li>
+            <li><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <!-- Column 3: Newsletter & Social -->
+        <div class="footer-col">
+          <h3>Stay in the Loop</h3>
+          <p>
+            Sign up for special offers and cleaning tips delivered right to you.
+          </p>
+          <form action="#" method="post" class="newsletter-form">
+            <input type="email" placeholder="Enter your email" required />
+            <button type="submit">Subscribe</button>
+          </form>
+          <div class="social-icons">
+            <a
+              href="https://www.facebook.com/profile.php?id=61570919773833"
+              target="_blank"
+              class="facebook-icon"
+              aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a
+              href="#"
+              aria-label="Instagram"
+              class="social-icon"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a
+              href="https://x.com/4AllWindsor"
+              target="_blank"
+              class="twitter-icon"
+              aria-label="Twitter"
+              ><i class="fab fa-twitter"></i
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>
+          &copy; <span id="current-year"></span> 4All Windsor Cleaning Services.
+          All rights reserved.
+        </p>
+        <p>
+          <a href="../privacy.html">Privacy Policy</a> |
+          <a href="../terms.html">Terms of Service</a>
+        </p>
+      </div>
+    </div>
+    <div class="tilt-overlay"></div>
+  </footer>
+
+  <script src="../javascript/top-bar.js"></script>
+  <script src="../javascript/hamburger.js"></script>
+  <script src="../javascript/navigation-bar.js"></script>
+  <script src="../javascript/general.js"></script>
+  <script src="../javascript/hero.js"></script>
+  <script src="../javascript/services.js"></script>
+
+</body>
+</html>

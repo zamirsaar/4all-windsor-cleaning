@@ -1,0 +1,145 @@
+/* top-bar.css */
+.top-bar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    color: #fff;
+    height: 80px;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    box-sizing: border-box;
+    transition: transform 0.3s ease;
+  }
+  .top-bar.hidden {
+    transform: translateY(-100%);
+  }
+  .top-bar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .top-bar .logo img {
+    height: 60px;
+    width: auto;
+    display: block;
+  }
+  .logo {
+    flex-shrink: 0;
+  }
+  .top-bar .contact-info {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: hidden;
+  }
+  .top-bar .contact-item {
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    color: #fff;
+    gap: 8px;
+    white-space: nowrap;
+  }
+  .top-bar .contact-item a {
+    color: #fff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  .top-bar .contact-item a:hover {
+    color: var(--secondary-color);
+  }
+  .icon-svg {
+    height: 24px;
+    width: 24px;
+    fill: var(--primary-color);
+    vertical-align: text-bottom;
+  }
+  /* CTA Button Container */
+  .cta-button {
+    flex: 0 0 auto;
+    margin-left: 20px;
+  }
+  /* CTA Button */
+  .btn-cta {
+    display: inline-block;
+    border: 3px solid var(--secondary-color);
+    background-color: transparent;
+    color: var(--secondary-color);
+    padding: 0.4rem;
+    border-radius: 4px;
+    font-size: 0;
+    text-transform: uppercase;
+    text-align: center;
+    transition: all 0.3s ease;
+  }
+  .fade-text {
+    position: relative;
+    overflow: hidden;
+  }
+  .text-full,
+  .text-short {
+    display: inline-block;
+    transition: opacity 0.3s ease;
+  }
+  .text-full {
+    opacity: 1;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  .text-short {
+    opacity: 0;
+    pointer-events: none;
+  }
+  /* Hover CTA button */
+  .btn-cta:hover {
+    background-color: var(--secondary-color);
+    color: #fff;
+    transform: scale(1.05);
+  }
+  /* Responsive text swap */
+  @media (max-width: 500px) {
+    .text-full {
+      opacity: 0;
+      pointer-events: none;
+      font-size: 0;
+    }
+    .text-short {
+      opacity: 1;
+      pointer-events: auto;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      font-weight: bold;
+    }
+  }
+  /* Hide contact info on smaller tablets & below */
+  @media screen and (max-width: 768px) {
+    .contact-info {
+      opacity: 0;
+      visibility: hidden;
+      animation: fadeOut 0.5s forwards;
+    }
+    .cta-button {
+      margin-top: 10px;
+    }
+  }
+  /* Keyframes fadeOut (optional) */
+  @keyframes fadeOut {
+    from {
+      opacity: 1;
+      visibility: visible;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
+  

@@ -1,0 +1,52 @@
+/* about.css */
+
+/* Our Story Snippet */
+.our-story-snippet {
+    position: relative;
+    background-color: #f9f9f9;
+    padding: 4rem 1rem 3rem;
+    box-shadow: inset 0 -1px 3px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    text-align: center;
+  }
+  .story-content-wrapper {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(10px);
+    animation: fadeUpSnippet 1s ease forwards 0.2s;
+  }
+  @keyframes fadeUpSnippet {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .story-content-wrapper h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    color: #333;
+  }
+  .story-content-wrapper p {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #555;
+    margin: 0 auto 2rem auto;
+    max-width: 600px;
+  }
+  .story-btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease;
+  }
+  .story-btn:hover {
+    background-color: var(--secondary-color);
+    color: white;
+  }
+  

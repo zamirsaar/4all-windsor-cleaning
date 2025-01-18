@@ -1,0 +1,204 @@
+/* general.css */
+
+/* Root Variables for Global Theme */
+:root {
+    --primary-color: #2a93d2; /* Blue from the logo */
+    --secondary-color: #7cc244; /* Green from the logo */
+    --accent-color: #f1f9ff; /* Light blue accent for sections */
+    --background-color: #f8f9fa; /* Light gray background */
+    --text-color: #333; /* General text color */
+    --heading-color: #2a93d2; /* Heading color inspired by the logo */
+    --font-family: 'Arial', sans-serif;
+    --font-family-alt: 'Georgia', serif;
+    --button-padding: 12px 24px;
+    --border-radius: 8px;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Global Reset */
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: var(--font-family);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--background-color);
+  }
+  
+  /* Links */
+  a {
+    text-decoration: none;
+    color: var(--primary-color);
+    transition: color 0.3s ease;
+  }
+  a:hover {
+    color: var(--secondary-color);
+  }
+  
+  /* Buttons */
+  .btn {
+    display: inline-block;
+    background-color: var(--primary-color);
+    color: #fff;
+    padding: var(--button-padding);
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    font-size: 1rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px var(--shadow-color);
+  }
+  .btn:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 0 6px 8px var(--shadow-color);
+  }
+  
+  /* Headers */
+  h1,
+  h2,
+  h3 {
+    color: var(--heading-color);
+    margin-bottom: 10px;
+    font-family: var(--font-family-alt);
+    text-shadow: 1px 1px 2px var(--shadow-color);
+  }
+  h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+  }
+  h2 {
+    font-size: 2rem;
+    font-weight: 600;
+  }
+  h3 {
+    font-size: 1.5rem;
+    font-weight: 500;
+  }
+  
+  /* Paragraphs */
+  p {
+    margin-bottom: 15px;
+    font-size: 1rem;
+  }
+  
+  /* Lists */
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  ul li {
+    margin-bottom: 10px;
+  }
+  
+  /* Images */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: var(--border-radius);
+  }
+  
+  /* Form Elements */
+  form input,
+  form textarea,
+  form button {
+    font-family: var(--font-family);
+  }
+  
+  form input,
+  form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: var(--border-radius);
+    font-size: 1rem;
+  }
+  form input:focus,
+  form textarea:focus {
+    border-color: var(--primary-color);
+    outline: none;
+    box-shadow: 0 0 5px var(--primary-color);
+  }
+  form button {
+    width: 100%;
+    padding: var(--button-padding);
+    background-color: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 4px 6px var(--shadow-color);
+  }
+  form button:hover {
+    background-color: var(--secondary-color);
+    box-shadow: 0 6px 8px var(--shadow-color);
+    color: white;
+  }
+  
+  /* Section Styling */
+  section {
+    background-color: var(--accent-color);
+    border-radius: var(--border-radius);
+    box-shadow: 0 4px 6px var(--shadow-color);
+  }
+  
+  /* Section Animation (fade-up) */
+  section {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  }
+  section.animate {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  /* Utility Classes */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  .text-center {
+    text-align: center;
+  }
+  .mt-10 {
+    margin-top: 10px;
+  }
+  .mt-20 {
+    margin-top: 20px;
+  }
+  .mb-10 {
+    margin-bottom: 10px;
+  }
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+  .box-shadow {
+    box-shadow: 0 4px 6px var(--shadow-color);
+  }
+  .rounded {
+    border-radius: var(--border-radius);
+  }
+  
+  /* Keyframes for fadeIn (used in top-bar.css or other places) */
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      visibility: hidden;
+    }
+    to {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+  
